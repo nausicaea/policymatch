@@ -5,6 +5,13 @@ Hashcat masks against a password policy.
 
 Based on PACK by The Sprawl at https://thesprawl.org/projects/pack/
 
+Installing
+----------
+
+.. code::
+
+    $ pip install -U git+https://github.com/youngec/policymatch.git
+
 Usage
 -----
 .. code::
