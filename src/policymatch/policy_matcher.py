@@ -18,7 +18,7 @@ class PolicyMatcher(object):
     max_digit = attr.ib(default=-1, validator=instance_of(int))
     min_special = attr.ib(default=0, validator=instance_of(int))
     max_special = attr.ib(default=-1, validator=instance_of(int))
-    min_length = attr.ib(default=8, validator=instance_of(int))
+    min_length = attr.ib(default=0, validator=instance_of(int))
     max_length = attr.ib(default=-1, validator=instance_of(int))
 
     # FIXME: The compliance checker currently ignores '?a'

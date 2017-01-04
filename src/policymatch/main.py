@@ -42,7 +42,7 @@ def main():
                               help="minimum number of special characters")
     policy_group.add_argument("--max-special", type=int, default=-1, metavar="INT",
                               help="maximum number of special characters")
-    policy_group.add_argument("--min-length", type=int, default=8, metavar="INT",
+    policy_group.add_argument("--min-length", type=int, default=0, metavar="INT",
                               help="minimum password length")
     policy_group.add_argument("--max-length", type=int, default=-1, metavar="INT",
                               help="maximum password length")
