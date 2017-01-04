@@ -29,23 +29,23 @@ def main():
     policy_group.add_argument("--min-lower", type=int, default=0, metavar="INT",
                               help="minimum number of lower case characters")
     policy_group.add_argument("--max-lower", type=int, default=-1, metavar="INT",
-                              help="maximum number of lower case characters (-1 for unbounded)")
+                              help="maximum number of lower case characters")
     policy_group.add_argument("--min-upper", type=int, default=0, metavar="INT",
                               help="minimum number of upper case characters")
     policy_group.add_argument("--max-upper", type=int, default=-1, metavar="INT",
-                              help="maximum number of upper case characters (-1 for unbounded)")
+                              help="maximum number of upper case characters")
     policy_group.add_argument("--min-digit", type=int, default=0, metavar="INT",
                               help="minimum number of digits")
     policy_group.add_argument("--max-digit", type=int, default=-1, metavar="INT",
-                              help="maximum number of digits (-1 for unbounded)")
+                              help="maximum number of digits")
     policy_group.add_argument("--min-special", type=int, default=0, metavar="INT",
                               help="minimum number of special characters")
     policy_group.add_argument("--max-special", type=int, default=-1, metavar="INT",
-                              help="maximum number of special characters (-1 for unbounded)")
+                              help="maximum number of special characters")
     policy_group.add_argument("--min-length", type=int, default=8, metavar="INT",
                               help="minimum password length")
     policy_group.add_argument("--max-length", type=int, default=-1, metavar="INT",
-                              help="maximum password length (-1 for unbounded)")
+                              help="maximum password length")
     args = parser.parse_args()
 
     # Create paths from the arguments
