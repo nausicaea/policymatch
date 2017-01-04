@@ -21,10 +21,11 @@ class PolicyMatcher(object):
     min_length = attr.ib(validator=instance_of(int))
     max_length = attr.ib(validator=instance_of(int))
 
-    _lower_re = re.compile(r"\?[al]|[^?]\p{Ll}")
-    _upper_re = re.compile(r"\?[au]|[^?]\p{Lu}")
-    _digit_re = re.compile(r"\?[ad]|[^?]\p{N}")
-    _special_re = re.compile(r"\?[as?]|[^?][!\"#$%&'()*+,-./:;<=>@[\]^_`{|}~]")
+    # FIXME: The compliance checker currently ignores '?a'
+    _lower_re = re.compile(r"\?l|[^?]\p{Ll}")
+    _upper_re = re.compile(r"\?u|[^?]\p{Lu}")
+    _digit_re = re.compile(r"\?d|[^?]\p{N}")
+    _special_re = re.compile(r"\?[s?]|[^?][!\"#$%&'()*+,-./:;<=>@[\]^_`{|}~]")
 
     def _is_compliant(self, mask):
         """
@@ -33,9 +34,7 @@ class PolicyMatcher(object):
         :param mask:
         :return:
         """
-        reduced_mask = mask.replace("?", "")
-
-        length_match = len(reduced_mask)
+        length_match = len(mask.replace("?", ""))
         lower_match = len(self._lower_re.findall(mask))
         upper_match = len(self._upper_re.findall(mask))
         digit_match = len(self._digit_re.findall(mask))
