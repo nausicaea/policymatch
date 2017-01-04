@@ -1,29 +1,30 @@
 # -*- coding: utf-8 -*-
 
+import attr
+from attr.validators import instance_of
 import regex as re
 
 
+@attr.s
 class PolicyMatcher(object):
     """
     Define a password policy and perform validation of masks.
     """
+    min_lower = attr.ib(validator=instance_of(int))
+    max_lower = attr.ib(validator=instance_of(int))
+    min_upper = attr.ib(validator=instance_of(int))
+    max_upper = attr.ib(validator=instance_of(int))
+    min_digit = attr.ib(validator=instance_of(int))
+    max_digit = attr.ib(validator=instance_of(int))
+    min_special = attr.ib(validator=instance_of(int))
+    max_special = attr.ib(validator=instance_of(int))
+    min_length = attr.ib(validator=instance_of(int))
+    max_length = attr.ib(validator=instance_of(int))
+
     _lower_re = re.compile(r"\?[al]|[^?]\p{Ll}")
     _upper_re = re.compile(r"\?[au]|[^?]\p{Lu}")
     _digit_re = re.compile(r"\?[ad]|[^?]\p{N}")
     _special_re = re.compile(r"\?[as?]|[^?][!\"#$%&'()*+,-./:;<=>@[\]^_`{|}~]")
-
-    def __init__(self, min_lower, max_lower, min_upper, max_upper, min_digit, max_digit,
-                 min_special, max_special, min_length, max_length):
-        self.min_lower = min_lower
-        self.max_lower = max_lower
-        self.min_upper = min_upper
-        self.max_upper = max_upper
-        self.min_digit = min_digit
-        self.max_digit = max_digit
-        self.min_special = min_special
-        self.max_special = max_special
-        self.min_length = min_length
-        self.max_length = max_length
 
     def _is_compliant(self, mask):
         """

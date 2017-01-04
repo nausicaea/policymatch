@@ -82,6 +82,7 @@ if __name__ == "__main__":
         cmdclass=versioneer.get_cmdclass(),
         platforms="any",
         install_requires=[
+            "attrs",
             "regex"
         ],
         tests_require=[
