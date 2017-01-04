@@ -17,14 +17,18 @@ from .utilities import get_lines, merge_lines, export_lines
 
 
 def main():
-    parser = argparse.ArgumentParser(prog="policymatch", description="Validate hashcat masks against password policies.")
+    parser = argparse.ArgumentParser(prog="policymatch",
+                                     description="Validate hashcat masks against password policies.")
     parser.add_argument("files", type=str, nargs="+", help="paths to the files you wish to check and merge")
     parser.add_argument("-s", "--sort", help="sort the merged entries", action="store_true")
     parser.add_argument("-o", "--out-file", type=str, help="write the resulting data to a file")
     merge_group = parser.add_mutually_exclusive_group()
-    merge_group.add_argument("-u", "--union", help="perform a union", action="store_true")
-    merge_group.add_argument("-i", "--intersect", help="perform an intersection", action="store_true")
-    merge_group.add_argument("-d", "--difference", help="perform a difference", action="store_true")
+    merge_group.add_argument("-u", "--union", help="perform a union on multiple input files",
+                             action="store_true")
+    merge_group.add_argument("-i", "--intersect", help="perform an intersection on multiple input files",
+                             action="store_true")
+    merge_group.add_argument("-d", "--difference", help="perform a difference on multiple input files",
+                             action="store_true")
     policy_group = parser.add_argument_group()
     policy_group.add_argument("--min-lower", type=int, default=0, metavar="INT",
                               help="minimum number of lower case characters")
