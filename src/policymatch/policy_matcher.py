@@ -10,16 +10,16 @@ class PolicyMatcher(object):
     """
     Define a password policy and perform validation of masks.
     """
-    min_lower = attr.ib(validator=instance_of(int))
-    max_lower = attr.ib(validator=instance_of(int))
-    min_upper = attr.ib(validator=instance_of(int))
-    max_upper = attr.ib(validator=instance_of(int))
-    min_digit = attr.ib(validator=instance_of(int))
-    max_digit = attr.ib(validator=instance_of(int))
-    min_special = attr.ib(validator=instance_of(int))
-    max_special = attr.ib(validator=instance_of(int))
-    min_length = attr.ib(validator=instance_of(int))
-    max_length = attr.ib(validator=instance_of(int))
+    min_lower = attr.ib(default=0, validator=instance_of(int))
+    max_lower = attr.ib(default=-1, validator=instance_of(int))
+    min_upper = attr.ib(default=0, validator=instance_of(int))
+    max_upper = attr.ib(default=-1, validator=instance_of(int))
+    min_digit = attr.ib(default=0, validator=instance_of(int))
+    max_digit = attr.ib(default=-1, validator=instance_of(int))
+    min_special = attr.ib(default=0, validator=instance_of(int))
+    max_special = attr.ib(default=-1, validator=instance_of(int))
+    min_length = attr.ib(default=8, validator=instance_of(int))
+    max_length = attr.ib(default=-1, validator=instance_of(int))
 
     # FIXME: The compliance checker currently ignores '?a'
     _lower_re = re.compile(r"\?l|[^?]\p{Ll}")
