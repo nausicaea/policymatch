@@ -25,20 +25,17 @@ Usage
       -s, --sort            sort the merged entries
       -o OUT_FILE, --out-file OUT_FILE
                             write the resulting data to a file
-      -u, --union           perform a union
-      -i, --intersect       perform an intersection
-      -d, --difference      perform a difference
+      -u, --union           perform a union on multiple input files
+      -i, --intersect       perform an intersection on multiple input files
+      -d, --difference      perform a difference on multiple input files
 
       --min-lower INT       minimum number of lower case characters
-      --max-lower INT       maximum number of lower case characters (-1 for
-                            unbounded)
+      --max-lower INT       maximum number of lower case characters
       --min-upper INT       minimum number of upper case characters
-      --max-upper INT       maximum number of upper case characters (-1 for
-                            unbounded)
+      --max-upper INT       maximum number of upper case characters
       --min-digit INT       minimum number of digits
-      --max-digit INT       maximum number of digits (-1 for unbounded)
+      --max-digit INT       maximum number of digits
       --min-special INT     minimum number of special characters
-      --max-special INT     maximum number of special characters (-1 for
-                            unbounded)
+      --max-special INT     maximum number of special characters
       --min-length INT      minimum password length
-      --max-length INT      maximum password length (-1 for unbounded)
+      --max-length INT      maximum password length
