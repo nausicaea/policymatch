@@ -17,7 +17,7 @@ from .utilities import get_lines, merge_lines, export_lines
 
 
 def main():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(prog="policymatch", description="Validate hashcat masks against password policies.")
     parser.add_argument("files", type=str, nargs="+", help="paths to the files you wish to check and merge")
     parser.add_argument("-s", "--sort", help="sort the merged entries", action="store_true")
     parser.add_argument("-o", "--out-file", type=str, help="write the resulting data to a file")

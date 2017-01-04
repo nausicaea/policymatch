@@ -7,12 +7,15 @@ Based on PACK by The Sprawl at https://thesprawl.org/projects/pack/
 
 Usage
 -----
+.. code::
 
-    usage: main.py [-h] [-s] [-o OUT_FILE] [-u | -i | -d] [--min-lower INT]
+    usage: policymatch [-h] [-s] [-o OUT_FILE] [-u | -i | -d] [--min-lower INT]
                    [--max-lower INT] [--min-upper INT] [--max-upper INT]
                    [--min-digit INT] [--max-digit INT] [--min-special INT]
                    [--max-special INT] [--min-length INT] [--max-length INT]
                    files [files ...]
+
+    Validate hashcat masks against password policies.
 
     positional arguments:
       files                 paths to the files you wish to check and merge
