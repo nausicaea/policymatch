@@ -66,7 +66,6 @@ if __name__ == "__main__":
     setup(
         name="policymatch",
         author="Eleanore Young",
-        author_email="",
         description="Policymatch validates existing Hashcat masks against a password policy.",
         long_description=read("README.rst"),
         keywords="hashcat, masks, policies",
